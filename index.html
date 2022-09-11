@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Indie+Flower"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div id="user-container" class="user-container"></div>
+      <div id="quote-container" class="quote-container"></div>
+      <div class="content-container">
+        <div id="pokemon-container" class="pokemon-container"></div>
+        <div id="meat-container" class="meat-container"></div>
+        <button id="generate-user">Generate User</button>
+      </div>
+      <div class="friends">
+        <h4>Friends</h4>
+        <div id="friends-container" class="friends-container"></div>
+      </div>
+    </div>
+
+    <script id="main-user-template" type="text/x-handlebars-template">
+      <img id="profile-pic" src="{{this.img}}" />
+      <div class="user-info">
+        <p>{{this.fullName}}</p>
+        <p>{{this.fullAddress}}</p>
+      </div>
+    </script>
+
+    <script id="freinds-template" type="text/x-handlebars-template">
+      {{#each friends}}
+        <div class="friends">{{this._firstName}}</div>
+      {{/each}}
+    </script>
+
+    <script id="quote-template" type="text/x-handlebars-template">
+      <div>Favorite quote:</div>
+      <p>{{this.quote}}</p>
+    </script>
+
+    <script id="meat-template" type="text/x-handlebars-template">
+      <div class="content-container">About Me:</div>
+      <div class="content-container">{{this.aboutMe}}</div>
+    </script>
+
+    <script id="pokemon-template" type="text/x-handlebars-template">
+      <div id="pokemon-text">{{this.name}}
+        <img id="pokemon-image" src="{{this.img}}" />
+      </div>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="tsOut/ModelDto.js"></script>
+    <script src="tsOut/AboutMe.js"></script>
+    <script src="tsOut/Quote.js"></script>
+    <script src="tsOut/Users.js"></script>
+    <script src="tsOut/Pokemon.js"></script>
+    <script src="tsOut/View.js"></script>
+    <script src="tsOut/Address.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="tsOut/user.js"></script>
+    <script src="tsOut/dataModel.js"></script>
+    <script src="tsOut/controller.js"></script>
+  </body>
+</html>
